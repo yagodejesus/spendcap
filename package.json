@@ -1,0 +1,54 @@
+{
+  "name": "spendcap",
+  "version": "0.1.0",
+  "description": "Know what every LLM call costs and stop runaway spend: token usage from OpenAI, Anthropic and Gemini responses, per-user, per-feature and global budgets with time-zone-aware resets. Zero dependencies.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "llm",
+    "cost",
+    "budget",
+    "openai",
+    "anthropic",
+    "gemini",
+    "tokens",
+    "finops",
+    "rate-limit",
+    "spend"
+  ],
+  "author": "Yago de Jesus Martins",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yagodejesus/spendcap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yagodejesus/spendcap/issues"
+  },
+  "homepage": "https://github.com/yagodejesus/spendcap#readme",
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
+  }
+}
